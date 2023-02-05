@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Andersen-Shop-MiscroServices" />
-        <module name="user-service" />
       </profile>
       <profile name="Annotation profile for order-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -21,6 +20,7 @@
         </processorPath>
         <module name="product-service" />
         <module name="order-service" />
+        <module name="user-service" />
       </profile>
     </annotationProcessing>
   </component>

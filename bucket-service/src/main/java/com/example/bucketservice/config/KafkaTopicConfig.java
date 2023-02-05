@@ -1,4 +1,4 @@
-package com.example.orderservice.config;
+package com.example.bucketservice.config;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.beans.factory.annotation.Value;

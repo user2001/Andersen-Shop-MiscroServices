@@ -28,12 +28,12 @@ public class OrderController {
     public String placeOrder(@RequestBody OrderRequest orderRequest) {
 
 
-        OrderEvent orderEvent=new OrderEvent();
-        orderEvent.setStatus("PENDING");
-        orderEvent.setMessage("order status is in pending");
-        orderEvent.setOrder(orderRequest);
-
-        orderProducer.sendMessage(orderEvent);
+//        OrderEvent orderEvent=new OrderEvent();
+//        orderEvent.setStatus("PENDING");
+//        orderEvent.setMessage("order status is in pending");
+//        orderEvent.setOrder(orderRequest);
+//
+//        orderProducer.sendMessage(orderEvent);
 
         orderService.placeOrder(orderRequest);
         return "Order place successfully";

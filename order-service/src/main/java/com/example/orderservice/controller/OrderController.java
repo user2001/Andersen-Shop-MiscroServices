@@ -26,8 +26,14 @@ public class OrderController {
     @PostMapping("/{id}/add")
     public String addOrderItem(@RequestBody OrderItemDto orderItemDto,@PathVariable long id){
         orderService.addOrderItem(id,orderItemDto);
-        return "Successfully added";
+        return "Order item was successfully added";
     }
+    @DeleteMapping("{orderId}/remove/{orderItemId}")
+    public String deleteOrderItem(@PathVariable long orderId, @PathVariable long orderItemId){
+        orderService.deleteOrderItem(orderId,orderItemId);
+        return "item "+orderItemId+" deleted from order";
+    }
+
     @GetMapping
     public List<Order> getAllOrders(){
         return orderService.getAllOrders();
@@ -36,5 +42,12 @@ public class OrderController {
     @GetMapping("/{id}")
     public Order getOrderById(@PathVariable long id){
         return orderService.getById(id);
+    }
+
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public String removeOrder(@PathVariable long id){
+        orderService.deleteOrderById(id);
+        return "Order with id:"+id+" deleted";
     }
 }

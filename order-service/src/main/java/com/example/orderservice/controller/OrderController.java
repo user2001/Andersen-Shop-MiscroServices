@@ -2,6 +2,7 @@ package com.example.orderservice.controller;
 
 import com.example.orderservice.dto.OrderItemDto;
 import com.example.orderservice.dto.OrderRequest;
+import com.example.orderservice.dto.OrderResponse;
 import com.example.orderservice.model.Order;
 import com.example.orderservice.service.OrderService;
 import lombok.RequiredArgsConstructor;
@@ -35,12 +36,12 @@ public class OrderController {
     }
 
     @GetMapping
-    public List<Order> getAllOrders(){
+    public List<OrderResponse> getAllOrders(){
         return orderService.getAllOrders();
     }
 
     @GetMapping("/{id}")
-    public Order getOrderById(@PathVariable long id){
+    public OrderResponse getOrderById(@PathVariable long id){
         return orderService.getById(id);
     }
 

@@ -16,13 +16,6 @@ import java.util.List;
 public class OrderController {
     private final OrderService orderService;
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public String placeOrder(@RequestBody OrderRequest orderRequest) {
-        orderService.placeOrder(orderRequest);
-        return "Order place successfully";
-    }
-
     @GetMapping
     public List<OrderResponse> getAllOrders() {
         return orderService.getAllOrders();

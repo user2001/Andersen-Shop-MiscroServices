@@ -14,11 +14,10 @@ import java.util.List;
 public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-  //  private Long owner_id;
-    private String orderNumber;
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<OrderItem> orderedItems;
+    private Long orderId;
+    private Long ownerId;
+    @ElementCollection
+    private List<Long> productsId;
 
 
 }

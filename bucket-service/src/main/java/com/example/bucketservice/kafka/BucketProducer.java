@@ -19,7 +19,7 @@ public class BucketProducer {
     private KafkaTemplate<String, BucketEvent> kafkaTemplate;
 
     public void sendMessage(BucketEvent event){
-        LOGGER.info(String.format("Order event=> %s",event.toString()));
+        LOGGER.info(String.format("BucketEvent=> %s",event.toString()));
 
         Message<BucketEvent> message= MessageBuilder
                 .withPayload(event)

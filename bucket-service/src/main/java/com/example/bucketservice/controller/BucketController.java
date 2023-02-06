@@ -25,6 +25,7 @@ public class BucketController {
 
         bucketProducer.sendMessage(bucketEvent);
     }
+
     @PostMapping("/remove")
     public void removeProduct(@RequestBody BucketDto bucketDto) {
         BucketEvent bucketEvent = new BucketEvent();
@@ -34,6 +35,7 @@ public class BucketController {
 
         bucketProducer.sendMessage(bucketEvent);
     }
+
     @PostMapping("/submit")
     public void submit(@RequestBody BucketDto bucketDto) {
         BucketEvent bucketEvent = new BucketEvent();

@@ -16,10 +16,10 @@ public class OrderService {
     private final OrderMapper orderMapper;
     private final OrderRepository orderRepository;
 
-    public void placeOrder(OrderRequest orderRequest) {
+    public void placeOrder(Long userId, List<Long> productsId) {
         Order order = new Order();
-        order.setOwnerId(order.getOwnerId());
-        order.setProductsId(orderRequest.getProductId());
+        order.setOwnerId(userId);
+        order.setProductsId(productsId);
         orderRepository.save(order);
     }
 
